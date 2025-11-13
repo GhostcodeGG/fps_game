@@ -1,2 +1,75 @@
-# FPS Game (Codex project)
+# Codex FPS Prototype
 
+A compact first-person shooter sandbox built from scratch with [pygame]. The
+engine uses classic ray casting techniques to emulate the 3D look and feel of
+early shooters such as *Doom* or *Quake* while keeping the codebase approachable
+for experimentation.
+
+## Features
+
+- Smooth mouse-look and WASD locomotion with collision handling
+- Real-time ray casting renderer with basic lighting falloff
+- Mini-map overlay that tracks the player inside a handcrafted maze
+- Simple HUD displaying frame rate and player coordinates
+- Stylised weapon overlay and crosshair for classic shooter vibes
+
+## Getting started
+
+1. Create and activate a virtual environment (optional but recommended):
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. Install the single dependency:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Launch the prototype:
+
+   ```bash
+   python main.py
+   ```
+
+The game window locks the mouse cursor for smooth camera control. Press `Esc`
+or close the window to quit.
+
+## Controls
+
+| Action            | Input            |
+| ----------------- | ---------------- |
+| Move forward/back | `W` / `S`        |
+| Strafe left/right | `A` / `D`        |
+| Sprint            | Hold `Shift`     |
+| Look around       | Move the mouse   |
+| Quit              | `Esc` or close window |
+
+## Folder structure
+
+```
+fps_game/
+├── game/
+│   ├── game.py         # Main loop, rendering orchestration
+│   ├── map.py          # Map definition, collision helpers, mini-map
+│   ├── player.py       # Player movement and camera control
+│   ├── raycasting.py   # Ray casting renderer for the world
+│   └── settings.py     # Centralised tuning parameters
+├── main.py             # Entry point
+├── requirements.txt    # Runtime dependency list
+└── README              # Project documentation
+```
+
+## Next steps
+
+The project is intentionally lightweight to encourage tinkering. Ideas for
+extending the prototype include:
+
+- Rendering billboard sprites for enemies and adding simple AI
+- Implementing weapon firing mechanics and hit detection
+- Loading maps from external files or procedural generation
+- Adding audio, textures, and particle effects for extra atmosphere
+
+[pygame]: https://www.pygame.org/
